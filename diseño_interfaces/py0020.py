@@ -1,3 +1,20 @@
+def sumar(num1, num2):
+    sum = num1 + num2
+    return sum
+    
+def restar(num1, num2):
+    resta = num1 - num2
+    return resta
+    
+def multiplicar(num1, num2):
+    multi = num1*num2
+    return multi
+    
+def division(num1, num2):
+    try:
+        return num / num2
+    except ZeroDivisionError:
+        print(f"No se puede dividir entre 0")
 while True:
     try:
         num = int(input('Introduce un numero entero: '))
@@ -15,22 +32,15 @@ while True:
 
         match opcion:
             case "1":
-                sum = num + num2
-                print(f"La suma es: {sum:.2f}")
+                print(sumar(num, num2))
             case "2":
-                sum = num - num2
-                print(f"La resta es: {sum:.2f}")
+                print(restar(num, num2))
             case "3":
-                sum = num * num2
-                print(f"La multiplicacion es: {sum:.2f}")
+                print(multiplicar(num, num2))
             case "4":
-                try:
-                    sum = num / num2
-                    print(f"La division es: {sum:.2f}")
-                except ZeroDivisionError:
-                    print(f"No se puede dividir entre 0")
+                print(division(num, num2))
             case _:
                 print('Opcion no valida')
+
     except ValueError:
         print('Valor no valido')
-        
